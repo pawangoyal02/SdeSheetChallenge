@@ -6,8 +6,8 @@ void rec(TreeNode<int>* root, int level, vector<int> &ans)
      {
          ans.push_back(root->data);
      }
-     rec(root->left, level+1, ans);
-     rec(root->right, level+1, ans);
+     rec(root->left, level+1, ans); //rec(root->right, level+1, ans); right view
+     rec(root->right, level+1, ans); //rec(root->left, level+1, ans); right view
  }
 vector<int> getLeftView(TreeNode<int> *root)
 {
