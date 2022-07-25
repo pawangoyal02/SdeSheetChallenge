@@ -35,4 +35,3 @@ bool checkForCycle(int s, int V, vector<int> adj[], vector<int> &visited)
             }
         }
     }
-};
