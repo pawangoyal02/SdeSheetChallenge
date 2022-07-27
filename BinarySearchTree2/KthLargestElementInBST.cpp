@@ -18,3 +18,23 @@ int KthLargestNumber(TreeNode<int>* root, int k)
     TreeNode<int>* node= kLargest(root, k);
         return node->data;
 }
+
+
+// Codestudio- Using the fact that inorder of BST is sorted
+
+#include<bits/stdc++.h>
+using namespace std;
+void inorder(TreeNode<int>*root,vector<int> &ans){
+    if(root==NULL)return;
+    inorder(root->left,ans);
+    ans.push_back(root->data);
+    inorder(root->right,ans);
+}
+int KthLargestNumber(TreeNode<int>* root, int k) 
+{
+    vector<int> ans;
+    inorder(root,ans);
+    if(ans.size()<k)return -1;
+    return ans[ans.size()-k];
+    
+}
